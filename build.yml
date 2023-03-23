@@ -1,0 +1,13 @@
+pool:
+  vmImage: ubuntu-20.04
+
+stages:
+  - stage: continuous_integration
+    displayName: Continuous Integration
+    jobs:
+      - job: build
+        displayName: Build
+        container: mcr.microsoft.com/dotnet/sdk:7.0
+        steps:
+          - script: dotnet run
+            displayName: Run .Net application
